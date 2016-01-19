@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+    <title>Analytical Sense | Jupyter on the Cloud -- A How-To</title>
+    <link rel="shortcut icon" type="image/png" href="http://will-so.github.io/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="http://will-so.github.io/favicon.ico">
+    <link href="http://will-so.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Full Atom Feed" />
+    <link href="http://will-so.github.io/feeds/none.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Categories Atom Feed" />
+    <link rel="stylesheet" href="http://will-so.github.io/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="http://will-so.github.io/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://will-so.github.io/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+    <!-- Added for the MathJax thing -->
+    <script type="text/javascript">
+    init_mathjax = function() {
+        if (window.MathJax) {
+            // MathJax loaded
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                },
+                displayAlign: 'left', // Change this to 'center' to center equations.
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 0}}
+                }
+            });
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $("div.collapseheader").click(function () {
+        $header = $(this).children("span").first();
+        $codearea = $(this).children(".input_area");
+        console.log($(this).children());
+        $codearea.slideToggle(500, function () {
+            $header.text(function () {
+                return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+            });
+        });
+    });
+    });
+    </script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67989600-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+    <meta name="keywords" content="AWS,*Nix" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://will-so.github.io">Home</a></li>
+                <li><a href="http://will-so.github.io/pages/about.html">About</a></li>
+                <li><a href="http://will-so.github.io/pages/data-projects.html">Data Projects</a></li>
+                <li><a href="http://will-so.github.io/pages/glossary.html">Glossary</a></li>
+                <li><a href="https://github.com/Will-So/">GitHub</a></li>
+                <li><a href="http://will-so.github.io/tags">Tags</a></li>
+                <li><a href="http://will-so.github.io/archives">Archives</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="http://will-so.github.io">Analytical Sense</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">Nov 16, 2015</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="http://will-so.github.io/blog/Jupyter_on.html" rel="bookmark" title="Permanent Link to &quot;Jupyter on the Cloud -- A How-To&quot;">Jupyter on the Cloud -- A How-To</a>
+                </h2>
+
+                <p>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the Jupyter Notebook with an EC2 instance allows us to analyze data of a size that would be difficult or impossible to do on our local machines. The most powerful (from a memory perspective) EC2 instance has 244GB of Ram and 32 cores and often costs only 50 cents/hr.</p>
+<p>This tutorial explains:</p>
+<ol>
+<li>How to Set up the Jupyter Notebook on an EC2 instance so we can use it from a web browser.</li>
+<li>How to keep the notebook running even if the SSH session closes.</li>
+<li>A workflow for dealing with spot instances. </li>
+</ol>
+<p>This post assumes you are already familiar with the basics of EC2. You should know how to start an instance and SSH into it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Step-1:-Setting-up-your-EC2-Instance">Step 1: Setting up your EC2 Instance<a class="anchor-link" href="#Step-1:-Setting-up-your-EC2-Instance">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Go to the EC2 Management Console and select launch instances</li>
+<li>Choose which AMI you want to use. I recommend Ubuntu. There might be some minor differences if you choose something else. [2]</li>
+<li>Select which type of instance you want and change any additional settings</li>
+<li>In the security group page, enable HTTPS and Port 9999. Port 9999 is the port we will be accessing the notebook from:
+<img src="https://dl.dropboxusercontent.com/u/97258109/Screens/S3570.png" alt=""></li>
+<li>Connect to your EC2 Instance with SSH</li>
+<li>Install all the software you need including the Notebook[3]<ul>
+<li>The link to install conda can be found <a href="https://www.continuum.io/downloads">here</a>. Just copy the link address for linux and then use <code>wget link</code> on your remote host to download it. Just follow the directions on the page. The installation will ask whether to append the conda environment to the Python path. Type in <code>yes</code></li>
+<li>After installing, you need to reload <code>.bashrc</code> (type <code>. .bashrc</code>)</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Step-2:-Configuring-the-Notebook-Server">Step 2: Configuring the Notebook Server<a class="anchor-link" href="#Step-2:-Configuring-the-Notebook-Server">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Jupyter Documentation provides an excellent walkthrough on configuring the server <a href="http://jupyter-notebook.readthedocs.org/en/latest/public_server.html">here</a>. The tl;dr is:</p>
+<ol>
+<li>In the terminal type: <code>jupyter notebook --generate-config</code> in order to generate the configuration file.</li>
+<li>In IPython type in <code>from notebook.auth import passwd; passwd()</code> and then enter in the password you want to use to access the notebook. Remember the password and copy the hash you get back. </li>
+<li><p>Generate an SSL certificate using the following code:</p>
+
+<pre><code> openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.key -out mycert.pem</code></pre>
+</li>
+<li><p>Open the configuration file (<code>~/.jupyter/jupyter_notebook_config.py</code> by default) you made with your favorite text editor and copy in the hash generated from passwd():</p>
+<div class="highlight"><pre><span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="s">u&#39;sha1:67c9e60bb8b6:9ffede0825894254b2e042ea597d771089e11aed&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s">&#39;*&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">open_browser</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">9999</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">certfile</span> <span class="o">=</span> <span class="s">u&#39;/home/ubuntu/mycert.pem&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">keyfile</span> <span class="o">=</span> <span class="s">u&#39;/home/ubuntu/mycert.key&#39;</span>
+</pre></div>
+</li>
+<li><p>In <code>.bashrc</code> make the following alias:</p>
+<p><code>alias jupyter='nohup jupyter notebook &amp;'</code></p>
+</li>
+</ol>
+<p>Then reload <code>.bashrc</code> again. This also makes your jupyter session persistent. It will not stop running just because the ssh session is closed.</p>
+<p>Now you can type <code>jupyter</code> in the terminal and the server should run. Then browse to <a href="https://ip_address:9999">https://ip_address:9999</a> and login with the password you entered:</p>
+<p><img src="https://dl.dropboxusercontent.com/u/97258109/Screens/S3574.png" width="800"/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Protecting-your-data-while-using-Spot-Instances">Protecting your data while using Spot Instances<a class="anchor-link" href="#Protecting-your-data-while-using-Spot-Instances">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Spot instances are much cheaper than on-demand instances. They downside is that you can be kicked off your instance if the amount of capacity of the Spot Instance gets too high.</p>
+<p>The best way to deal with the transient nature of spot instances is to use the following workflow:</p>
+<ol>
+<li>Write the code on your local-host</li>
+<li>Prototype the code on your local-host with a small sample of the data you want to process.</li>
+<li>Move your code to your EC2 instance and then run the code. I usually use github for this. </li>
+</ol>
+<p>This way we minimize the amount of time that we have to run the EC2 instance and we don't have to worry about losing any code because it is all in the local host.</p>
+<p>If you end up writing novel code in your EC2 instance I recommend keeping your code synced with github.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Footnotes">Footnotes<a class="anchor-link" href="#Footnotes">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>[1] Some commands might be different above if you choose a different AMI.</p>
+<p>[2] In the future, I recommend creating your own AMI so you don't have to do this every time.</p>
+<p>[3] For installing the apps, I recommend you use <a href="https://www.continuum.io/downloads">Anaconda</a> to install Python and dependencies. Note that you will have to restart your shell session in order to use</p>
+
+</div>
+</div>
+</div></p>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="http://will-so.github.io/blog/Jupyter_on.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="http://will-so.github.io/category/none.html" rel="tag">None</a>
+                    &nbsp;&middot;
+                    &nbsp;<a href="http://will-so.github.io/tags/aws.html" class="tags">AWS</a>
+                    &nbsp;<a href="http://will-so.github.io/tags/nix.html" class="tags">*Nix</a>
+                </div>
+            </article>
+            <div class="clear"></div>
+            <footer>
+                <p>
+                <a href="https://github.com/jody-frankowski/blue-penguin">Blue Penguin</a> Theme
+                &middot;
+                Powered by <a href="http://getpelican.com">Pelican</a>
+                &middot;
+                <a href="http://will-so.github.io/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+</html>
+
