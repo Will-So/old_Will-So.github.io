@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          
+      
 <style type="text/css">
 /*!
 *
@@ -202,11 +202,10 @@ jQuery(document).ready(function($) {
 
 
     <meta charset="utf-8" />
-    <title>Analytical Sense | WC CLI Quick Reference Part 1</title>
+    <title>Analytical Sense | Projects</title>
     <link rel="shortcut icon" type="image/png" href="http://analyticalsen.se/favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="http://analyticalsen.se/favicon.ico">
     <link href="http://analyticalsen.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Full Atom Feed" />
-    <link href="http://analyticalsen.se/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Categories Atom Feed" />
     <link rel="stylesheet" href="http://analyticalsen.se/theme/css/screen.css" type="text/css" />
     <link rel="stylesheet" href="http://analyticalsen.se/theme/css/pygments.css" type="text/css" />
     <link rel="stylesheet" href="http://analyticalsen.se/theme/css/print.css" type="text/css" media="print" />
@@ -261,8 +260,6 @@ jQuery(document).ready(function($) {
 
 </script>
 
-
-    <meta name="keywords" content="*Nix,CLI" />
 </head>
 <body>
     <header>
@@ -270,7 +267,7 @@ jQuery(document).ready(function($) {
             <ul>
                 <li><a href="http://analyticalsen.se">Home</a></li>
                 <li><a href="http://analyticalsen.se/pages/about.html">About</a></li>
-                <li><a href="http://analyticalsen.se/pages/projects.html">Projects</a></li>
+                <li class="selected"><a href="http://analyticalsen.se/pages/projects.html">Projects</a></li>
                 <li><a href="http://analyticalsen.se/pages/glossary.html">Glossary</a></li>
                 <li><a href="https://github.com/Will-So/">GitHub</a></li>
                 <li><a href="http://analyticalsen.se/tags">Tags</a></li>
@@ -282,70 +279,19 @@ jQuery(document).ready(function($) {
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">Jun 20, 2015</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/WCCLI.html" rel="bookmark" title="Permanent Link to &quot;WC CLI Quick Reference Part 1&quot;">WC CLI Quick Reference Part 1</a>
-                </h2>
-
-                <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="What-is-WC-good-for?">What is WC good for?<a class="anchor-link" href="#What-is-WC-good-for?">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>wc</code> is available by default on my *nix machines. It is useful to determine the following about a file:</p>
-<ol>
-<li>The number of words or characters in a file.</li>
-<li>The number of columns in a file</li>
-<li>the number of lines in a file</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+        <div id="content">
+            <div class="page">
+                <h1>Projects</h1>
+                <p>Here are some interesting data projects that I have worked on. </p>
+<h1>Data Projects</h1>
 <ul>
-<li><code>wc -l newdataset.csv</code> Returns the number of lines in <code>newdataset.csv</code></li>
-<li><code>wc -w masterthesis.txt</code> returns the number of words</li>
-<li><code>head -1 newdataset.csv | wc -w</code> returns the number of columns in a file <strong>IF</strong> every column name is only 1 word. This is usually the case with <code>csv</code> files and virtually always the case with <code>tsv</code> files. Run just the first command first to verify that this is the case.</li>
+<li>Maximizing Returns in Peer to Peer Lending. <a href="http://will-so.github.io/AS/blog/Predicting.html">Blog Post</a>. <a href="https://github.com/Will-So/Lending_Club">Github</a></li>
+<li>Finding the best place to start a restaurant. <a href="https://github.com/Will-So/Location-Win">Github</a>. <a href="http://www.analyticalsen.se/blog/Starting_a.html">Blog Post</a></li>
+<li>Making wildly accurate sentiment analysis. <a href="https://github.com/Will-So/latent_recommender">Github</a></li>
+<li>Finding the best remakes and sequels in the Film Industry. <a href="http://will-so.github.io/AS/blog/films_2015.html">Blog Post</a>. <a href="https://github.com/Will-So/films">Github</a>.</li>
 </ul>
+            </div>
 
-</div>
-</div>
-</div></p>
-                <div class="clear"></div>
-
-                <div class="info">
-                    <a href="http://analyticalsen.se/blog/WCCLI.html">posted at 00:00</a>
-                    &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/nix.html" class="tags">*Nix</a>
-                    &nbsp;<a href="http://analyticalsen.se/tags/cli.html" class="tags">CLI</a>
-                </div>
-            </article>
             <div class="clear"></div>
             <footer>
                 <p>

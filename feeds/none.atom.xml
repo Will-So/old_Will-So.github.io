@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Analytical Sense</title><link href="http://will-so.github.io/" rel="alternate"></link><link href="http://will-so.github.io/feeds/none.atom.xml" rel="self"></link><id>http://will-so.github.io/</id><updated>2016-01-18T00:00:00+01:00</updated><entry><title>Dealing_With_Outliers:_The_Concepts</title><link href="http://will-so.github.io/blog/Dealing_Wi.html" rel="alternate"></link><updated>2016-01-18T00:00:00+01:00</updated><author><name>Will Sorenson</name></author><id>tag:will-so.github.io,2016-01-18:blog/Dealing_Wi.html</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Analytical Sense</title><link href="http://analyticalsen.se/" rel="alternate"></link><link href="http://analyticalsen.se/feeds/none.atom.xml" rel="self"></link><id>http://analyticalsen.se/</id><updated>2016-01-18T00:00:00+01:00</updated><entry><title>Dealing With Outliers: The Concepts</title><link href="http://analyticalsen.se/blog/Dealing_Wi.html" rel="alternate"></link><published>2016-01-18T00:00:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2016-01-18:blog/Dealing_Wi.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Q:-What-are-some-ways-to-make-Models-Robust-to-Outliers"&gt;Q: What are some ways to make Models Robust to Outliers&lt;a class="anchor-link" href="#Q:-What-are-some-ways-to-make-Models-Robust-to-Outliers"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Making-Robust-Models"&gt;Making Robust Models&lt;a class="anchor-link" href="#Making-Robust-Models"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="Making-Models-Robust-to-Outliers"&gt;Making Models Robust to Outliers&lt;a class="anchor-link" href="#Making-Models-Robust-to-Outliers"&gt;&amp;#182;&lt;/a&gt;&lt;/h1&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -42,8 +33,8 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Mean squared error (MSE) and thus root mean squared error (RMSE) are very sensitive to outliers (&lt;a href="#footnotes"&gt;1&lt;/a&gt;). Sometimes, this is desirable where we want to punish an error of 20 much more than an error of 5. (400 vs 25). This is not desirable when we are trying to avoid undue&lt;/p&gt;
-&lt;p&gt;Mean Absolute Error is somewhat less sensitive to outliars because it does not square the errors. It is not "robust" to outliers but it represents a middle ground between traditional loss functions and methods discussed below.&lt;/p&gt;
+&lt;p&gt;Mean squared error (MSE) and thus root mean squared error (RMSE) are very sensitive to outliers (&lt;a href="#footnotes"&gt;1&lt;/a&gt;). Sometimes, this is desirable where we want to punish an error of 20 much more than an error of 5. (400 vs 25). This is not desirable when we are trying to avoid outliers from having an exaggerated effect on our model.&lt;/p&gt;
+&lt;p&gt;Mean Absolute Error is somewhat less sensitive to outliers because it does not square the errors. It is not "robust" to outliers but it represents a middle ground between traditional loss functions and methods discussed below.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -66,7 +57,7 @@
 $$L_\delta (a) = \begin{cases}
  \frac{1}{2}{a^2}                   &amp; \text{for } |a| \le \delta, \\
  \delta (|a| - \frac{1}{2}\delta), &amp; \text{otherwise.}
-\end{cases}$$&lt;p&gt;This has the effect of combining Squared Errors and Absolute Errors. For $|a| \le \delta$, the error function represents the RMSE. For $|a| \ge \delta$, the error function represents LAD.&lt;/p&gt;
+\end{cases}$$&lt;p&gt;This has the effect of combining Squared Errors and Absolute Errors. For $|a| \le \delta$, the error function represents the RMSE. For $|a| \ge \delta$, the error function represents Mean Absolute Errors.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -213,7 +204,7 @@ Source: Wikipedia&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="ETL"></category></entry><entry><title>Starting a Successful Restaurant</title><link href="http://will-so.github.io/blog/Starting_a.html" rel="alternate"></link><updated>2015-12-16T00:00:00+01:00</updated><author><name>Will Sorenson</name></author><id>tag:will-so.github.io,2015-12-16:blog/Starting_a.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="ETL"></category></entry><entry><title>Starting a Successful Restaurant</title><link href="http://analyticalsen.se/blog/Starting_a.html" rel="alternate"></link><published>2015-12-16T00:00:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-12-16:blog/Starting_a.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -461,7 +452,7 @@ Source: Wikipedia&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category><category term="ML"></category></entry><entry><title>Predicting Lending Club Defaults for Fun and Profit</title><link href="http://will-so.github.io/blog/Predicting.html" rel="alternate"></link><updated>2015-11-25T00:00:00+01:00</updated><author><name>Will Sorenson</name></author><id>tag:will-so.github.io,2015-11-25:blog/Predicting.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category><category term="ML"></category></entry><entry><title>Predicting Lending Club Defaults for Fun and Profit</title><link href="http://analyticalsen.se/blog/Predicting.html" rel="alternate"></link><published>2015-11-25T00:00:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-11-25:blog/Predicting.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -637,7 +628,7 @@ Source: Wikipedia&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category></entry><entry><title>Everything You Need to Know to Use Random Forests</title><link href="http://will-so.github.io/blog/Everything.html" rel="alternate"></link><updated>2015-11-16T00:00:00+01:00</updated><author><name>Will Sorenson</name></author><id>tag:will-so.github.io,2015-11-16:blog/Everything.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category></entry><entry><title>Everything You Need to Know to Use Random Forests</title><link href="http://analyticalsen.se/blog/Everything.html" rel="alternate"></link><published>2015-11-16T00:00:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-11-16:blog/Everything.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -859,7 +850,7 @@ Source: Wikipedia&lt;/p&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[&amp;nbsp;]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="n"&gt;model_rf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;RandomForestClassifier&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n_estimators&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;oob_score&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;verbose&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;model_rf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;RandomForestClassifier&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n_estimators&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;oob_score&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;verbose&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                                   &lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2143&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;min_samples_split&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
                                  &lt;span class="n"&gt;n_jobs&lt;/span&gt;&lt;span class="o"&gt;=-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;fitted_model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;model_rf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -959,12 +950,12 @@ Source: Wikipedia&lt;/p&gt;
 APA    &lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.slideshare.net/0xdata/jan-vitek-distributedrandomforest522013"&gt;http://www.slideshare.net/0xdata/jan-vitek-distributedrandomforest522013&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://scikit-learn.org/stable/modules/ensemble.html"&gt;http://scikit-learn.org/stable/modules/ensemble.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://download.springer.com/static/pdf/639/art%253A10.1023%252FA%253A1010933404324.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Farticle%2F10.1023%2FA%3A1010933404324&amp;token2=exp=1447688130~acl=%2Fstatic%2Fpdf%2F639%2Fart%25253A10.1023%25252FA%25253A1010933404324.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Farticle%252F10.1023%252FA%253A1010933404324*~hmac=3b7a5a59b9ee6c2c4c500ef943cd2e0725e74621ba10977e4b51c8989b1819c7"&gt;Random Forests by Leo Breiman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://download.springer.com/static/pdf/639/art%253A10.1023%252FA%253A1010933404324.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Farticle%2F10.1023%2FA%3A1010933404324&amp;amp;token2=exp=1447688130~acl=%2Fstatic%2Fpdf%2F639%2Fart%25253A10.1023%25252FA%25253A1010933404324.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Farticle%252F10.1023%252FA%253A1010933404324*~hmac=3b7a5a59b9ee6c2c4c500ef943cd2e0725e74621ba10977e4b51c8989b1819c7"&gt;Random Forests by Leo Breiman&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="ML"></category></entry><entry><title>Jupyter on the Cloud -- A How-To</title><link href="http://will-so.github.io/blog/Jupyter_on.html" rel="alternate"></link><updated>2015-11-16T00:00:00+01:00</updated><author><name>Will Sorenson</name></author><id>tag:will-so.github.io,2015-11-16:blog/Jupyter_on.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="ML"></category></entry><entry><title>Jupyter on the Cloud -- A How-To</title><link href="http://analyticalsen.se/blog/Jupyter_on.html" rel="alternate"></link><published>2015-11-16T00:00:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-11-16:blog/Jupyter_on.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -1036,13 +1027,13 @@ APA    &lt;/li&gt;
 &lt;pre&gt;&lt;code&gt; openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.key -out mycert.pem&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Open the configuration file (&lt;code&gt;~/.jupyter/jupyter_notebook_config.py&lt;/code&gt; by default) you made with your favorite text editor and copy in the hash generated from passwd():&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_config&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;u&amp;#39;sha1:67c9e60bb8b6:9ffede0825894254b2e042ea597d771089e11aed&amp;#39;&lt;/span&gt;
-&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;get_config&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;u&amp;#39;sha1:67c9e60bb8b6:9ffede0825894254b2e042ea597d771089e11aed&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open_browser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;9999&lt;/span&gt;
-&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;certfile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;u&amp;#39;/home/ubuntu/mycert.pem&amp;#39;&lt;/span&gt;
-&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyfile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;u&amp;#39;/home/ubuntu/mycert.key&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;certfile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;u&amp;#39;/home/ubuntu/mycert.pem&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NotebookApp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyfile&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;u&amp;#39;/home/ubuntu/mycert.key&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;In &lt;code&gt;.bashrc&lt;/code&gt; make the following alias:&lt;/p&gt;
@@ -1103,7 +1094,7 @@ APA    &lt;/li&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="AWS"></category><category term="*Nix"></category></entry><entry><title>Quickly Make CLI Tools with Python</title><link href="http://will-so.github.io/blog/Quickly_Make_CLI_Tools_with_Python.html" rel="alternate"></link><updated>2015-10-21T00:00:00+02:00</updated><author><name>Will Sorenson</name></author><id>tag:will-so.github.io,2015-10-21:blog/Quickly_Make_CLI_Tools_with_Python.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="AWS"></category><category term="*Nix"></category></entry><entry><title>Quickly Make CLI Tools with Python</title><link href="http://analyticalsen.se/blog/Quickly_Make_CLI_Tools_with_Python.html" rel="alternate"></link><published>2015-10-21T00:00:00+02:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-10-21:blog/Quickly_Make_CLI_Tools_with_Python.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -1149,16 +1140,16 @@ APA    &lt;/li&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;click&lt;/span&gt;
-&lt;span class="n"&gt;BLOG_DIR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;~/blog&amp;#39;&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;click&lt;/span&gt;
+&lt;span class="n"&gt;BLOG_DIR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;~/blog&amp;#39;&lt;/span&gt;
 &lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;--blog-dir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;BLOG_DIR&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;--notebook-path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prompt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Enter the full notebook path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-              &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;files must be&amp;#39;&amp;#39;located in `blog_dir`&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;--title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prompt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;enter the title. Must be unique&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;--tags&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prompt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;enter a tag. You may enter more than one via&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-              &lt;span class="n"&gt;multiple&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;--category&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--blog-dir&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;BLOG_DIR&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--notebook-path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prompt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Enter the full notebook path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+              &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;files must be&amp;#39;&amp;#39;located in `blog_dir`&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prompt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;enter the title. Must be unique&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--tags&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;prompt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;enter a tag. You may enter more than one via&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+              &lt;span class="n"&gt;multiple&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--category&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blog_dir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;notebook_path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;    Simple program that takes the directory of a notebook&lt;/span&gt;
@@ -1233,12 +1224,12 @@ APA    &lt;/li&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[&amp;nbsp;]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt;
 
-&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;~/scripts/script_name.sh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;~/scripts/script_name.sh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
-&lt;span class="n"&gt;rc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;rc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -1280,14 +1271,14 @@ APA    &lt;/li&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[&amp;nbsp;]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt; 
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/p&gt;</summary><category term="Python"></category><category term="CLI"></category></entry><entry><title>sqlite3</title><link href="http://will-so.github.io/blog/sqlite3.html" rel="alternate"></link><updated>2015-07-25T00:00:00+02:00</updated><author><name>Will Sorenson</name></author><id>tag:will-so.github.io,2015-07-25:blog/sqlite3.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="Python"></category><category term="CLI"></category></entry><entry><title>sqlite3</title><link href="http://analyticalsen.se/blog/sqlite3.html" rel="alternate"></link><published>2015-07-25T00:00:00+02:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-07-25:blog/sqlite3.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -1350,7 +1341,7 @@ APA    &lt;/li&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;We can dump files to csv via the following syntax&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;mode&lt;/span&gt; &lt;span class="n"&gt;CSV&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;mode&lt;/span&gt; &lt;span class="n"&gt;CSV&lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="k"&gt;on&lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;output&lt;/span&gt; &lt;span class="k"&gt;table&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;csv&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
