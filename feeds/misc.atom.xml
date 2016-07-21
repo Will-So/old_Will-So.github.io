@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Analytical Sense</title><link href="http://analyticalsen.se/" rel="alternate"></link><link href="http://analyticalsen.se/feeds/misc.atom.xml" rel="self"></link><id>http://analyticalsen.se/</id><updated>2015-10-22T00:00:00+02:00</updated><entry><title>In Search of the Most Promising Movie Remakes or Sequels</title><link href="http://analyticalsen.se/blog/films_2015.html" rel="alternate"></link><published>2015-10-22T00:00:00+02:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-10-22:blog/films_2015.html</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Analytical Sense</title><link href="http://analyticalsen.se/" rel="alternate"></link><link href="http://analyticalsen.se/feeds/misc.atom.xml" rel="self"></link><id>http://analyticalsen.se/</id><updated>2015-10-22T00:00:00-07:00</updated><entry><title>In Search of the Most Promising Movie Remakes or Sequels</title><link href="http://analyticalsen.se/blog/films_2015.html" rel="alternate"></link><published>2015-10-22T00:00:00-07:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-10-22:blog/films_2015.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -369,7 +369,7 @@
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category></entry><entry><title>WC CLI Quick Reference Part 1</title><link href="http://analyticalsen.se/blog/WCCLI.html" rel="alternate"></link><published>2015-06-20T00:00:00+02:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-06-20:blog/WCCLI.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category></entry><entry><title>WC CLI Quick Reference Part 1</title><link href="http://analyticalsen.se/blog/WCCLI.html" rel="alternate"></link><published>2015-06-20T00:00:00-07:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-06-20:blog/WCCLI.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -416,7 +416,7 @@
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="*Nix"></category><category term="CLI"></category></entry><entry><title>license</title><link href="http://analyticalsen.se/blog/license.html" rel="alternate"></link><published>2012-12-01T10:02:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2012-12-01:blog/license.html</id><summary type="html">&lt;p&gt;The MIT License (MIT)&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="*Nix"></category><category term="CLI"></category></entry><entry><title>license</title><link href="http://analyticalsen.se/blog/license.html" rel="alternate"></link><published>2012-12-01T10:02:00-08:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2012-12-01:blog/license.html</id><summary type="html">&lt;p&gt;The MIT License (MIT)&lt;/p&gt;
 &lt;p&gt;Copyright (c) 2014 Daan Debie&lt;/p&gt;
 &lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

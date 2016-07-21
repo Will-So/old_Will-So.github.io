@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Analytical Sense</title><link href="http://analyticalsen.se/" rel="alternate"></link><link href="http://analyticalsen.se/feeds/all.atom.xml" rel="self"></link><id>http://analyticalsen.se/</id><updated>2016-01-18T00:00:00+01:00</updated><entry><title>Dealing With Outliers: The Concepts</title><link href="http://analyticalsen.se/blog/Dealing_Wi.html" rel="alternate"></link><published>2016-01-18T00:00:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2016-01-18:blog/Dealing_Wi.html</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Analytical Sense</title><link href="http://analyticalsen.se/" rel="alternate"></link><link href="http://analyticalsen.se/feeds/all.atom.xml" rel="self"></link><id>http://analyticalsen.se/</id><updated>2016-01-18T00:00:00-08:00</updated><entry><title>Dealing With Outliers: The Concepts</title><link href="http://analyticalsen.se/blog/Dealing_Wi.html" rel="alternate"></link><published>2016-01-18T00:00:00-08:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2016-01-18:blog/Dealing_Wi.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -204,7 +204,7 @@ Source: Wikipedia&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="ETL"></category></entry><entry><title>Starting a Successful Restaurant</title><link href="http://analyticalsen.se/blog/Starting_a.html" rel="alternate"></link><published>2015-12-16T00:00:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-12-16:blog/Starting_a.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="ETL"></category></entry><entry><title>Starting a Successful Restaurant</title><link href="http://analyticalsen.se/blog/Starting_a.html" rel="alternate"></link><published>2015-12-16T00:00:00-08:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-12-16:blog/Starting_a.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -452,7 +452,7 @@ Source: Wikipedia&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category><category term="ML"></category></entry><entry><title>Predicting Lending Club Defaults for Fun and Profit</title><link href="http://analyticalsen.se/blog/Predicting.html" rel="alternate"></link><published>2015-11-25T00:00:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-11-25:blog/Predicting.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category><category term="ML"></category></entry><entry><title>Predicting Lending Club Defaults for Fun and Profit</title><link href="http://analyticalsen.se/blog/Predicting.html" rel="alternate"></link><published>2015-11-25T00:00:00-08:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-11-25:blog/Predicting.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -628,7 +628,7 @@ Source: Wikipedia&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category></entry><entry><title>Everything You Need to Know to Use Random Forests</title><link href="http://analyticalsen.se/blog/Everything.html" rel="alternate"></link><published>2015-11-16T00:00:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-11-16:blog/Everything.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category></entry><entry><title>Everything You Need to Know to Use Random Forests</title><link href="http://analyticalsen.se/blog/Everything.html" rel="alternate"></link><published>2015-11-16T00:00:00-08:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-11-16:blog/Everything.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -955,7 +955,7 @@ APA    &lt;/li&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="ML"></category></entry><entry><title>Jupyter on the Cloud -- A How-To</title><link href="http://analyticalsen.se/blog/Jupyter_on.html" rel="alternate"></link><published>2015-11-16T00:00:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-11-16:blog/Jupyter_on.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="ML"></category></entry><entry><title>Jupyter on the Cloud -- A How-To</title><link href="http://analyticalsen.se/blog/Jupyter_on.html" rel="alternate"></link><published>2015-11-16T00:00:00-08:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-11-16:blog/Jupyter_on.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -1094,7 +1094,7 @@ APA    &lt;/li&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="AWS"></category><category term="*Nix"></category></entry><entry><title>In Search of the Most Promising Movie Remakes or Sequels</title><link href="http://analyticalsen.se/blog/films_2015.html" rel="alternate"></link><published>2015-10-22T00:00:00+02:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-10-22:blog/films_2015.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="AWS"></category><category term="*Nix"></category></entry><entry><title>In Search of the Most Promising Movie Remakes or Sequels</title><link href="http://analyticalsen.se/blog/films_2015.html" rel="alternate"></link><published>2015-10-22T00:00:00-07:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-10-22:blog/films_2015.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -1464,7 +1464,7 @@ APA    &lt;/li&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category></entry><entry><title>Quickly Make CLI Tools with Python</title><link href="http://analyticalsen.se/blog/Quickly_Make_CLI_Tools_with_Python.html" rel="alternate"></link><published>2015-10-21T00:00:00+02:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-10-21:blog/Quickly_Make_CLI_Tools_with_Python.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="DS"></category></entry><entry><title>Quickly Make CLI Tools with Python</title><link href="http://analyticalsen.se/blog/Quickly_Make_CLI_Tools_with_Python.html" rel="alternate"></link><published>2015-10-21T00:00:00-07:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-10-21:blog/Quickly_Make_CLI_Tools_with_Python.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -1648,7 +1648,7 @@ APA    &lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/p&gt;</summary><category term="Python"></category><category term="CLI"></category></entry><entry><title>sqlite3</title><link href="http://analyticalsen.se/blog/sqlite3.html" rel="alternate"></link><published>2015-07-25T00:00:00+02:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-07-25:blog/sqlite3.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="Python"></category><category term="CLI"></category></entry><entry><title>sqlite3</title><link href="http://analyticalsen.se/blog/sqlite3.html" rel="alternate"></link><published>2015-07-25T00:00:00-07:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-07-25:blog/sqlite3.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -1755,7 +1755,7 @@ sqlite&amp;gt; pragma temp_store_directory = '/spacious/hdd/data';&lt;/code&gt;&
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="('*Nix'"></category><category term="'CLI')"></category></entry><entry><title>WC CLI Quick Reference Part 1</title><link href="http://analyticalsen.se/blog/WCCLI.html" rel="alternate"></link><published>2015-06-20T00:00:00+02:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-06-20:blog/WCCLI.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="('*Nix'"></category><category term="'CLI')"></category></entry><entry><title>WC CLI Quick Reference Part 1</title><link href="http://analyticalsen.se/blog/WCCLI.html" rel="alternate"></link><published>2015-06-20T00:00:00-07:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2015-06-20:blog/WCCLI.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -1802,7 +1802,7 @@ sqlite&amp;gt; pragma temp_store_directory = '/spacious/hdd/data';&lt;/code&gt;&
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary><category term="*Nix"></category><category term="CLI"></category></entry><entry><title>license</title><link href="http://analyticalsen.se/blog/license.html" rel="alternate"></link><published>2012-12-01T10:02:00+01:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2012-12-01:blog/license.html</id><summary type="html">&lt;p&gt;The MIT License (MIT)&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary><category term="*Nix"></category><category term="CLI"></category></entry><entry><title>license</title><link href="http://analyticalsen.se/blog/license.html" rel="alternate"></link><published>2012-12-01T10:02:00-08:00</published><author><name>Will Sorenson</name></author><id>tag:analyticalsen.se,2012-12-01:blog/license.html</id><summary type="html">&lt;p&gt;The MIT License (MIT)&lt;/p&gt;
 &lt;p&gt;Copyright (c) 2014 Daan Debie&lt;/p&gt;
 &lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
