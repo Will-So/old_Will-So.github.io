@@ -9,8 +9,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1105,7 +1105,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2534,7 +2533,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,7 +3023,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8756,6 +8753,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8958,8 +8958,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8982,6 +8988,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9118,6 +9134,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9207,6 +9226,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9251,6 +9273,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9547,6 +9572,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9567,11 +9593,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11242,7 +11263,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11554,6 +11575,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11567,6 +11589,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11629,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11641,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
@@ -11740,7 +11769,7 @@ div.collapseheader {
 }
 </style>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 <script type="text/javascript">
 init_mathjax = function() {
     if (window.MathJax) {
@@ -11779,14 +11808,14 @@ jQuery(document).ready(function($) {
 
 
     <meta charset="utf-8" />
-    <title>Analytical Sense | In Search of the Most Promising Movie Remakes or Sequels</title>
-    <link rel="shortcut icon" type="image/png" href="http://analyticalsen.se/favicon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="http://analyticalsen.se/favicon.ico">
-    <link href="http://analyticalsen.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Full Atom Feed" />
-    <link href="http://analyticalsen.se/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Categories Atom Feed" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/screen.css" type="text/css" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/print.css" type="text/css" media="print" />
+    <title>Analytical Sense | Quickly Make CLI Tools with Python</title>
+    <link rel="shortcut icon" type="image/png" href="www.analyticalsen.se/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="www.analyticalsen.se/favicon.ico">
+    <link href="www.analyticalsen.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Full Atom Feed" />
+    <link href="www.analyticalsen.se/feeds/none.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Categories Atom Feed" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/print.css" type="text/css" media="print" />
     <meta name="generator" content="Pelican" />
 
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
@@ -11839,410 +11868,202 @@ jQuery(document).ready(function($) {
 </script>
 
 
-    <meta name="keywords" content="DS" />
+    <meta name="keywords" content="Python,CLI" />
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="http://analyticalsen.se">Home</a></li>
-                <li><a href="http://analyticalsen.se/pages/about.html">About</a></li>
-                <li><a href="http://analyticalsen.se/pages/projects.html">Projects</a></li>
-                <li><a href="http://analyticalsen.se/pages/glossary.html">Glossary</a></li>
+                <li><a href="www.analyticalsen.se">Home</a></li>
                 <li><a href="https://github.com/Will-So/">GitHub</a></li>
-                <li><a href="http://analyticalsen.se/tags">Tags</a></li>
-                <li><a href="http://analyticalsen.se/archives">Archives</a></li>
+                <li><a href="www.analyticalsen.se/tags">Tags</a></li>
+                <li><a href="www.analyticalsen.se/archives">Archives</a></li>
             </ul>
         </nav>
         <div class="header_box">
-            <h1><a href="http://analyticalsen.se">Analytical Sense</a></h1>
+            <h1><a href="www.analyticalsen.se">Analytical Sense</a></h1>
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">Oct 22, 2015</h4>
+        <div id="content">            <h4 class="date">Oct 21, 2015</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/films_2015.html" rel="bookmark" title="Permanent Link to &quot;In Search of the Most Promising Movie Remakes or Sequels&quot;">In Search of the Most Promising Movie Remakes or Sequels</a>
+                    <a href="www.analyticalsen.se/Quickly_Make_CLI_Tools_with_Python.html" rel="bookmark" title="Permanent Link to &quot;Quickly Make CLI Tools with Python&quot;">Quickly Make CLI Tools with Python</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Over the past couple of years Netflix and other tech firms have been enormously successful producing TV series for their subscribers. What would this strategy look like in the case of movies? I use data publicly available from Box Office Mojo and IMDB to find the films that are most likely to have a successful sequel.</p>
+<h1 id="Synopsis">Synopsis<a class="anchor-link" href="#Synopsis">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If thinking of making a CLI tool, consider using Python with <code>click</code>. It is very fast and will make your life easier. It is probably the most straightforward way to automate tasks.</p>
+<p>This script removes an enormous headache of making blog posts. As I already tend to take notes using the Jupyter Notebook, it makes it very easy to blog regularly.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Movies-vs-TV-Series">Movies vs TV Series<a class="anchor-link" href="#Movies-vs-TV-Series">&#182;</a></h2>
+<h1 id="Which-Library-to-Use">Which Library to Use<a class="anchor-link" href="#Which-Library-to-Use">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For subscription services like HBO and Netflix, focusing on series rather than movies makes intuitive sense. This is because both series and subscription services are recurring on a regular basis. Despite this intuition, history suggests that people are willing to subscribe for movies as well. HBO relied soley on movies for the first 20 years of its existence.</p>
-<p>Producing original content can also make a lot of sense. An expensive series like House of Cards costs about <a href="https://www.washingtonpost.com/local/md-politics/how-did-house-of-cards-get-millions-in-maryland-tax-credits/2014/02/21/c1eb375c-9b16-11e3-975d-107dfef7b668_story.html?wpisrc=nl_buzz">60 million</a> a season. Given that Netflix has <a href="http://www.statista.com/statistics/250934/quarterly-number-of-netflix-streaming-subscribers-worldwide/">33.3 Million subscribers</a>. Since new subscribers are going to be paying \$120 a year, Netflix only has to increase the number of their subscribers by 1.5% to break even. In the case of house of cards, it seems likely that Netflix made a good profit on the series.</p>
+<p>There are a number of good libraries that make making CLI apps with Python easy. I am personally a big fan of <code>click</code> as it seems to be the quickest way to get running. I have a short CLI available that automates my blog posting workflow <a href="https://github.com/Will-So/pelican_autpost">here</a>.</p>
+<p>Here is the heart of <code>pelican_autopost</code>. This little code already makes all of the necessary documentation, prompts, default values, and arguments.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">costs</span> <span class="o">=</span> <span class="mi">50</span><span class="n">e6</span><span class="p">;</span> <span class="n">subsciber_cost</span> <span class="o">=</span> <span class="mi">120</span>
-<span class="n">sub_rev</span> <span class="o">=</span> <span class="n">subsciber_cost</span> <span class="o">*</span> <span class="mf">33.3e6</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;$</span><span class="si">{:,}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sub_rev</span> <span class="o">*</span> <span class="mf">0.015</span><span class="p">)))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">click</span>
+<span class="n">BLOG_DIR</span> <span class="o">=</span> <span class="s1">&#39;~/blog&#39;</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--blog-dir&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">BLOG_DIR</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--notebook-path&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Enter the full notebook path&#39;</span><span class="p">,</span>
+              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;files must be&#39;&#39;located in `blog_dir`&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--title&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;enter the title. Must be unique&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--tags&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;enter a tag. You may enter more than one via&#39;</span><span class="p">,</span>
+              <span class="n">multiple</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--category&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">_main</span><span class="p">(</span><span class="n">blog_dir</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">tags</span><span class="p">,</span> <span class="n">category</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simple program that takes the directory of a notebook</span>
+<span class="sd">     (use `greadlink -f file.ipynb |  pbcopy`)</span>
+<span class="sd">    and other parameters and then publishes it to my pelican blog.</span>
+
+
+<span class="sd">    Examples</span>
+<span class="sd">    ----</span>
+<span class="sd">    ./pelican_auto_post.py --tags *Nix --tags CLI  --title sqlite3</span>
+<span class="sd">    Enter the full notebook path: /Users/Will/Devel/blog_posts/sqlite3_CLI.ipynb</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">title</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">notebook_path</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">make_md</span><span class="p">(</span><span class="n">blog_dir</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">tags</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">)</span>
+    <span class="n">copy_notebook</span><span class="p">(</span><span class="n">notebook_path</span><span class="p">,</span> <span class="n">blog_dir</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+    <span class="n">publish</span><span class="p">(</span><span class="n">blog_dir</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>$59,940,000
-</pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The breakeven point for movies can be much lower. Summer blockbusters budgets may attract the most attention with their eyewatering budgets but many movies cost 25 million or less. The break-even point for a 25MM film would be to increase the subscriber base by about 0.7%.</p>
-
+<h1 id="Running-the-Script-from-anywhere">Running the Script from anywhere<a class="anchor-link" href="#Running-the-Script-from-anywhere">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Stylized-Facts">Stylized Facts<a class="anchor-link" href="#Stylized-Facts">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>My investigation yields the following relevant results:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now that we have the script, we can easily run it from anywhere by performing the following steps:</p>
 <ol>
-<li>The single most important factor is to be beloved by the audience.<ul>
-<li>1% increase in rating of the masses associated with a 6% increase of ROI. </li>
-<li>critics unimportant. </li>
-</ul>
-</li>
-<li>Though Budget does a great job of predicting box office sales, it negatively correlated with ROI. <ul>
-<li>A 10% increase in production budget is associated with a 5% decrease in ROI. </li>
-</ul>
-</li>
-<li>High-cost films are much more unpredictable than than low-cost films</li>
-<li>Audience reviews  of the original does not predict reviews of the first</li>
-<li>Month of year is unimportant once controlling for the above except for October. </li>
-<li>Sequels have a high ROI. <ul>
-<li>Gross on average 5 times their production budgets</li>
-<li>Under traditional assumptions: 278% ROI</li>
-<li>Under realistic assumptions: 112% ROI</li>
-</ul>
-</li>
+<li>Make a directory for all of your CLI tools if you don't already have it. I use <code>~/scipts</code>. Move your script to here.</li>
+<li>Add this directory to your <code>PATH</code> environmental variable. For OSX this is <code>~/.bash_profile</code> </li>
+<li>Make sure you have the proper shebang line added to the top of your file <code>#!/usr/bin/env python3</code></li>
 </ol>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Strategy">Strategy<a class="anchor-link" href="#Strategy">&#182;</a></h2>
+<h1 id="Executing-Bash-Scripts">Executing Bash Scripts<a class="anchor-link" href="#Executing-Bash-Scripts">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Finding the most promising remake candidates requires understanding the movie industry better. I use ROI to measure the success of a movie because it is an excellent proxy for how many people viewed the movie.</p>
-<p>I train a linear regression model that predicts ROI based on a basket of features retrieved from IMDB and Box Office Mojo. I divide my dataset of sequels into a training set (85% of total data) and a test set (15%) of total data. I then use a linear regression with L1 normalization to find the most important factors that are correlated with ROI. My model assumes that there are no confounders ($E[\epsilon \mid X] = 0$. This is a major limitation of my model.</p>
+<p>Executing bash scripts from Python can be tricky. The <a href="https://github.com/Will-So/pelican_autpost">Github</a> describes how I did it but the most robust way to do this seems to be to execute the data directly from python like this:</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Important-Relationships">Important Relationships<a class="anchor-link" href="#Important-Relationships">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="" alt=""></p>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">call</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;~/scripts/script_name.sh&#39;</span><span class="p">):</span>
+    <span class="n">script</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">rc</span> <span class="o">=</span> <span class="n">call</span><span class="p">(</span><span class="n">script</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://dl.dropboxusercontent.com/u/97258109/Screens/S3447.png" alt="">
-<img src="https://dl.dropboxusercontent.com/u/97258109/Screens/S3451.png" alt=""></p>
+<p>Make sure that you only run this with trusted code that oyu are feeding it yourself. Otherwise it poses a security issue. An alterantive option would be to santize the file in Python before using <code>subprocess.call</code> on it.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Everything-else-is-not-significant">Everything else is not significant<a class="anchor-link" href="#Everything-else-is-not-significant">&#182;</a></h2>
+<h1 id="Testing">Testing<a class="anchor-link" href="#Testing">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>More or less every regression looks like</p>
+<p>If the CLI is quite small, often times the best test is just going to be the script itself. I recommend to only test to prevent the things that can cause problems (accidently overwriting or deleting files). In the pelican autopost tool, for example, the only test I feel helped is the one that insures that the markdown files won't be overwritten because this could cause problems if there were to be two blog posts of the same title.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://dl.dropboxusercontent.com/u/97258109/Screens/S3448.png" alt=""></p>
+ 
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Important-Features">Important Features<a class="anchor-link" href="#Important-Features">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I find that only budget, audience rating, and being realased in October have a statistically significant effect on ROI. Surprisingly, the quality or box office of the original film does not seem to influence the results. My analysis suggests that it is difficult to predict ex-ante the success of movies.</p>
-<table>
-<thead><tr>
-<th>Factor</th>
-<th>Change in ROI</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Released in Month of October</td>
-<td>$\Uparrow 5\%$</td>
-</tr>
-<tr>
-<td>$\Uparrow$ Budget 10%</td>
-<td>$\Downarrow 5.2\%$</td>
-</tr>
-<tr>
-<td>$\Uparrow$ Audience Rating 1%</td>
-<td>$\Uparrow$ 6.3%</td>
-</tr>
-<tr>
-<td>Other months</td>
-<td>0*</td>
-</tr>
-<tr>
-<td>Runtime</td>
-<td>0*</td>
-</tr>
-<tr>
-<td>Genre</td>
-<td>0*</td>
-</tr>
-<tr>
-<td>Days since sequel</td>
-<td>0*</td>
-</tr>
-<tr>
-<td>Months other than October</td>
-<td>0*</td>
-</tr>
-<tr>
-<td>MPAA Rating</td>
-<td>0*</td>
-</tr>
-<tr>
-<td>Critic rating</td>
-<td>0*</td>
-</tr>
-<tr>
-<td>Change in PB from original</td>
-<td>0*</td>
-</tr>
-<tr>
-<td>Audience rating of original</td>
-<td>0*</td>
-</tr>
-</tbody>
-</table>
-<p>* Statistically insignificantly different from 0</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-Kinds-of-Movies-Should-be-Remade?">What Kinds of Movies Should be Remade?<a class="anchor-link" href="#What-Kinds-of-Movies-Should-be-Remade?">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Lower risk: Focus on cheaper films<ul>
-<li>Less likely to have massively negative ROI.</li>
-<li>Able to produce many cheap films rather than a few expensive films</li>
-</ul>
-</li>
-<li>Release the Movie in October<ul>
-<li>Unmet demand before the busy months of November/December?</li>
-</ul>
-</li>
-<li>Do a good job on the sequel<ul>
-<li>Audience opinion on sequels not correlated with the rating of the original film.</li>
-</ul>
-</li>
-<li>Keep it short<ul>
-<li>Runtime not associated with ROI.</li>
-<li>Do not take this logic too far. </li>
-</ul>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Most-Promising-Sequels">The Most Promising Sequels<a class="anchor-link" href="#The-Most-Promising-Sequels">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Keeping the above in mind, these are the films that have the best chance to suceed. As many films (~200) satisfy all 4 conditions above, films are ranked by their thumb-rule ROI.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Gone with the wind</li>
-<li>Juno</li>
-<li>Crocodile Dundee</li>
-<li>Blair Witch Project</li>
-<li>The Rocky Horror Picture show</li>
-<li>National Lamboon's Animal House</li>
-<li>Platoon</li>
-<li>Fahrenheit 9/11</li>
-<li>Magic Mike</li>
-<li>The Usual Suspects. </li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Appendix">Appendix<a class="anchor-link" href="#Appendix">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>See the appendix and accompanying code <a href="https://github.com/Will-So/films">here</a>. The appendix contains information like how I computed ROI as well as various limitations of the model and more descriptive statistics.</p>
-
-</div>
-</div>
-</div></p>
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/films_2015.html">posted at 00:00</a>
+                    <a href="www.analyticalsen.se/Quickly_Make_CLI_Tools_with_Python.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="www.analyticalsen.se/category/none.html" rel="tag">None</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/ds.html" class="tags">DS</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/python.html" class="tags">Python</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/cli.html" class="tags">CLI</a>
                 </div>
             </article>
             <div class="clear"></div>
@@ -12252,7 +12073,7 @@ jQuery(document).ready(function($) {
                 &middot;
                 Powered by <a href="http://getpelican.com">Pelican</a>
                 &middot;
-                <a href="http://analyticalsen.se/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+                <a href="www.analyticalsen.se/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
             </footer>
         </div>
         <div class="clear"></div>

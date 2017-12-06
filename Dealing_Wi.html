@@ -9,8 +9,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1105,7 +1105,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2534,7 +2533,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,7 +3023,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8756,6 +8753,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8958,8 +8958,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8982,6 +8988,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9118,6 +9134,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9207,6 +9226,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9251,6 +9273,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9547,6 +9572,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9567,11 +9593,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11242,7 +11263,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11554,6 +11575,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11567,6 +11589,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11629,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11641,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
@@ -11740,7 +11769,7 @@ div.collapseheader {
 }
 </style>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 <script type="text/javascript">
 init_mathjax = function() {
     if (window.MathJax) {
@@ -11779,14 +11808,14 @@ jQuery(document).ready(function($) {
 
 
     <meta charset="utf-8" />
-    <title>Analytical Sense | sqlite3</title>
-    <link rel="shortcut icon" type="image/png" href="http://analyticalsen.se/favicon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="http://analyticalsen.se/favicon.ico">
-    <link href="http://analyticalsen.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Full Atom Feed" />
-    <link href="http://analyticalsen.se/feeds/none.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Categories Atom Feed" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/screen.css" type="text/css" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/print.css" type="text/css" media="print" />
+    <title>Analytical Sense | Dealing With Outliers: The Concepts</title>
+    <link rel="shortcut icon" type="image/png" href="www.analyticalsen.se/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="www.analyticalsen.se/favicon.ico">
+    <link href="www.analyticalsen.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Full Atom Feed" />
+    <link href="www.analyticalsen.se/feeds/none.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Categories Atom Feed" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/print.css" type="text/css" media="print" />
     <meta name="generator" content="Pelican" />
 
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
@@ -11839,149 +11868,228 @@ jQuery(document).ready(function($) {
 </script>
 
 
-    <meta name="keywords" content="('*Nix','CLI')" />
+    <meta name="keywords" content="ETL" />
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="http://analyticalsen.se">Home</a></li>
-                <li><a href="http://analyticalsen.se/pages/about.html">About</a></li>
-                <li><a href="http://analyticalsen.se/pages/projects.html">Projects</a></li>
-                <li><a href="http://analyticalsen.se/pages/glossary.html">Glossary</a></li>
+                <li><a href="www.analyticalsen.se">Home</a></li>
                 <li><a href="https://github.com/Will-So/">GitHub</a></li>
-                <li><a href="http://analyticalsen.se/tags">Tags</a></li>
-                <li><a href="http://analyticalsen.se/archives">Archives</a></li>
+                <li><a href="www.analyticalsen.se/tags">Tags</a></li>
+                <li><a href="www.analyticalsen.se/archives">Archives</a></li>
             </ul>
         </nav>
         <div class="header_box">
-            <h1><a href="http://analyticalsen.se">Analytical Sense</a></h1>
+            <h1><a href="www.analyticalsen.se">Analytical Sense</a></h1>
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">Jul 25, 2015</h4>
+        <div id="content">            <h4 class="date">Jan 18, 2016</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/sqlite3.html" rel="bookmark" title="Permanent Link to &quot;sqlite3&quot;">sqlite3</a>
+                    <a href="www.analyticalsen.se/Dealing_Wi.html" rel="bookmark" title="Permanent Link to &quot;Dealing With Outliers: The Concepts&quot;">Dealing With Outliers: The Concepts</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="What-is-sqlite3-good-for?">What is sqlite3 good for?<a class="anchor-link" href="#What-is-sqlite3-good-for?">&#182;</a></h1>
+<h1 id="Making-Models-Robust-to-Outliers">Making Models Robust to Outliers<a class="anchor-link" href="#Making-Models-Robust-to-Outliers">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Using the <code>sqlite3</code> CLI can often be a good alternative to python-based solutions when the operations we are performing is easy to express directly with SQL.</p>
+<p>One of the more difficult part of making predictive models is making sure that our model is robust to outliers. Fitting data strongly to outliers tends to give us bad predictive results. There are two solution that will work well in most cases and the are a few other methods worth considering when the first two either fail or are impracticle.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="How-does-it-work?">How does it work?<a class="anchor-link" href="#How-does-it-work?">&#182;</a></h1>
+<h2 id="Use-a-robust-loss-function">Use a robust loss function<a class="anchor-link" href="#Use-a-robust-loss-function">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Mean squared error (MSE) and thus root mean squared error (RMSE) are very sensitive to outliers (<a href="#footnotes">1</a>). Sometimes, this is desirable where we want to punish an error of 20 much more than an error of 5. (400 vs 25). This is not desirable when we are trying to avoid outliers from having an exaggerated effect on our model.</p>
+<p>Mean Absolute Error is somewhat less sensitive to outliers because it does not square the errors. It is not "robust" to outliers but it represents a middle ground between traditional loss functions and methods discussed below.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Huber-Loss-function">The Huber Loss function<a class="anchor-link" href="#The-Huber-Loss-function">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One of the better loss functions to choose is the Huber Loss function. It is <a href="http://en.wikipedia.org/wiki/Huber_loss">defined</a> as:</p>
+<p>$$L_\delta (a) = \begin{cases}
+ \frac{1}{2}{a^2}                   &amp; \text{for } |a| \le \delta, \\
+ \delta (|a| - \frac{1}{2}\delta), &amp; \text{otherwise.}
+\end{cases}$$</p>
+<p>This has the effect of combining Squared Errors and Absolute Errors. For $|a| \le \delta$, the error function represents the RMSE. For $|a| \ge \delta$, the error function represents Mean Absolute Errors.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Winsorizing-the-Data">Winsorizing the Data<a class="anchor-link" href="#Winsorizing-the-Data">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Winsorizing the data provides the same results as the Huber Loss Function when $\delta$ in the huber loss function is equal to the point at which the value is winsorized. This has a large disadvantage compared to the Huber Loss Function in that we are making changes to the dataset. That leaves us with a choice between making two copies of the data (one winsorized and non-winsorized) or discarding some information that may come in useful in future analysis. The former may not be practical for very large datasets.</p>
+<p>An advantage of winsorizing data is that it makes it easy to visualize that data in a meaningful way.</p>
+<p>Pandas has <code>pd.clip()</code> for this capability which makes it easy to use.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/c/c1/RhoFunctions.png" alt="">
+Source: Wikipedia</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Discarding-Outliers">Discarding Outliers<a class="anchor-link" href="#Discarding-Outliers">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Most data munging has outliers that are almost certainly products of measurement errors or very rare anomalies.</p>
+<p>Some examples of this:</p>
 <ol>
-<li>Commands like <code>.tables</code> are prefixed with a dot. </li>
-<li>SQL statements <code>select * from AllstarFull</code> end with a semicolon</li>
+<li>Demographic surveys where someone has 17 PhDs</li>
+<li>Someone borrowing from lending club with a yearly income of 7M.</li>
+<li>A stock transaction with a trade time before stock markets opened.</li>
 </ol>
-<p>Useful commands are:</p>
+<p>Even in the event some of those observations were accurately measures (quite unlikely), they almost surely lack external validity so will only hurt the performance of our model unless we delete them.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Use-a-Model-that-is-Robust-to-Standard-Errors">Use a Model that is Robust to Standard Errors<a class="anchor-link" href="#Use-a-Model-that-is-Robust-to-Standard-Errors">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Support Vector Machines in particular tend to not consider outliers during training. Gradient Boosting, and Random Forests also have nice properties that make it difficult (but not impossible) to overfit a training dataset.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="A-Bad-method:-Log-transforms">A Bad method: Log transforms<a class="anchor-link" href="#A-Bad-method:-Log-transforms">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Log transforms are often mooted as a good way to make outliers stand out less. When we use a log transform we are allowing the outliers to dictate how we describe <strong>all of our observations</strong>. This is just the opposite of using a robust measure.</p>
+<p>This is not to say that log transforms should not be used. There are many situations when log transforms should be used <strong>due to the behavior of all the observations</strong>:</p>
 <ol>
-<li><code>.tables</code>: Shows all tables in the db.</li>
-<li><code>.timer ON</code>: times how long an operation takes between <code>.timer ON</code> and <code>.timer OFF</code></li>
-<li><code>.schema</code> shows the schema of all the tables in the db</li>
+<li>When the errors have an extreme positvely skewed distribution. We then use the <a href="http://en.wikipedia.org/wiki/Power_transform#Box.E2.80.93Cox_transformation">Box-Cox</a>. This allows us to improve the validity of the Pearson Correlation coefficient, stabalize variance, and in general make traditional descriptive statistics more meaningful.</li>
+<li>When the relationship being investigates is close to exponential.</li>
+<li>When you want to represent a model that explains the explanatory variables' influence in terms of percentages (relative values) rather than absolute differences. </li>
 </ol>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Cookbook">Cookbook<a class="anchor-link" href="#Cookbook">&#182;</a></h1>
+<h1 id="-Footnotes"><a id="footnotes" /> Footnotes<a class="anchor-link" href="#-Footnotes">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can dump files to csv via the following syntax</p>
-<div class="highlight"><pre><span></span><span class="p">.</span><span class="k">mode</span> <span class="n">CSV</span>
-<span class="p">.</span><span class="n">headers</span> <span class="k">on</span>
-<span class="p">.</span><span class="k">output</span> <span class="k">table</span><span class="p">.</span><span class="n">csv</span>
-</pre></div>
-<p>We can run an SQL script from the command line using the following syntax</p>
-<p><code>sqlite3 database.db &lt; sql_script.sql</code></p>
-<p>After dropping a table, you may have to use <code>VACUUM;</code> to reclaim the space that the dropped table was using.</p>
-<h2 id="Dealing-with-Database-or-Disk-is-Full">Dealing with Database or Disk is Full<a class="anchor-link" href="#Dealing-with-Database-or-Disk-is-Full">&#182;</a></h2><p>When dealing with tables that are large compared to the space on disk it's possible to get an error that says: <code>Error: near line 41: database or disk is full</code> even though the disk isn't full and even though the database is far smaller than the 120TB size limit.</p>
-<p>This could be because either 1) the temporary file directory is filling up or 2) the database is corrupted.</p>
-<p>In the case of (1), the solution is either to tell SQLite to put everything in ram via <code>sqlite&gt; prgrama temp_store = 2;</code>. If you don't have enough ran for the operation, you can change the temporary directory with the following code:</p>
-
-<pre><code>sqlite&gt; pragma temp_store = 1;
-sqlite&gt; pragma temp_store_directory = '/spacious/hdd/data';</code></pre>
-<p>In the case of (2) hope is still not lost. Search the internet for ways to repair a corrupt SQLite database.</p>
+<p>[1]: This is easy to see from the mathematical definition of MSE: $1/n \sum( \hat Y_i- Y_i)^2$. Since the distance between the sample mean and the datapoint is squared, it exaggerates the influence of outliers.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="When-to-use-SQLITE">When to use SQLITE<a class="anchor-link" href="#When-to-use-SQLITE">&#182;</a></h1>
+<h1 id="References">References<a class="anchor-link" href="#References">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>SQLite is much easier to work with than other RBDMS because it is serverless, requires few external libraries, and requires no configuration.</p>
-<p>I think of SQLite as being the Python of databases. If you are using an RBDMS for a project, you should have a good reason not to use SQLite. On websites it can handle 100k hits/day with ease and <a href="https://www.sqlite.org/whentouse.html">500k is probably a more realistic upper bound</a>.</p>
-<p>The <code>SQLite</code> <a href="https://www.sqlite.org/whentouse.html">website</a> offers a few cases when SQLite probably is not the best choice.</p>
-<ol>
-<li>If your DB is so big that it can't fit on a single disk, then you probably need something else.</li>
-<li>Websites with very high write volumes</li>
-<li>Multiple uers need to write to a db simultaneously. </li>
-<li>You aren't storing your RBDMS on the same hard drive as your app.</li>
-</ol>
+<ul>
+<li><a href="http://stats.stackexchange.com/questions/48267/mean-absolute-error-or-root-mean-squared-error">http://stats.stackexchange.com/questions/48267/mean-absolute-error-or-root-mean-squared-error</a></li>
+<li><a href="http://projecteuclid.org/download/pdf_1/euclid.aoms/1177703732">http://projecteuclid.org/download/pdf_1/euclid.aoms/1177703732</a></li>
+</ul>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/sqlite3.html">posted at 00:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://analyticalsen.se/category/none.html" rel="tag">None</a>
+                    <a href="www.analyticalsen.se/Dealing_Wi.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="www.analyticalsen.se/category/none.html" rel="tag">None</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/nix.html" class="tags">('*Nix'</a>
-                    &nbsp;<a href="http://analyticalsen.se/tags/cli.html" class="tags">'CLI')</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/etl.html" class="tags">ETL</a>
                 </div>
             </article>
             <div class="clear"></div>
@@ -11991,7 +12099,7 @@ sqlite&gt; pragma temp_store_directory = '/spacious/hdd/data';</code></pre>
                 &middot;
                 Powered by <a href="http://getpelican.com">Pelican</a>
                 &middot;
-                <a href="http://analyticalsen.se/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+                <a href="www.analyticalsen.se/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
             </footer>
         </div>
         <div class="clear"></div>

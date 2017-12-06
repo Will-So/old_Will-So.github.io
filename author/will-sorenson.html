@@ -9,8 +9,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1105,7 +1105,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2534,7 +2533,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,7 +3023,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8756,6 +8753,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8958,8 +8958,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8982,6 +8988,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9118,6 +9134,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9207,6 +9226,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9251,6 +9273,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9547,6 +9572,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9567,11 +9593,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11242,7 +11263,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11554,6 +11575,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11567,6 +11589,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11629,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11641,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
@@ -11740,7 +11769,7 @@ div.collapseheader {
 }
 </style>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 <script type="text/javascript">
 init_mathjax = function() {
     if (window.MathJax) {
@@ -11780,12 +11809,12 @@ jQuery(document).ready(function($) {
 
     <meta charset="utf-8" />
     <title>Analytical Sense | Articles by Will Sorenson</title>
-    <link rel="shortcut icon" type="image/png" href="http://analyticalsen.se/favicon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="http://analyticalsen.se/favicon.ico">
-    <link href="http://analyticalsen.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Full Atom Feed" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/screen.css" type="text/css" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/print.css" type="text/css" media="print" />
+    <link rel="shortcut icon" type="image/png" href="www.analyticalsen.se/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="www.analyticalsen.se/favicon.ico">
+    <link href="www.analyticalsen.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Full Atom Feed" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/print.css" type="text/css" media="print" />
     <meta name="generator" content="Pelican" />
 
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
@@ -11843,18 +11872,15 @@ jQuery(document).ready(function($) {
         <nav>
             <ul>
 
-                <li class="ephemeral selected"><a href="http://analyticalsen.se/author/will-sorenson.html">Will Sorenson</a></li>
-                <li><a href="http://analyticalsen.se">Home</a></li>
-                <li><a href="http://analyticalsen.se/pages/about.html">About</a></li>
-                <li><a href="http://analyticalsen.se/pages/projects.html">Projects</a></li>
-                <li><a href="http://analyticalsen.se/pages/glossary.html">Glossary</a></li>
+                <li class="ephemeral selected"><a href="www.analyticalsen.se/author/will-sorenson.html">Will Sorenson</a></li>
+                <li><a href="www.analyticalsen.se">Home</a></li>
                 <li><a href="https://github.com/Will-So/">GitHub</a></li>
-                <li><a href="http://analyticalsen.se/tags">Tags</a></li>
-                <li><a href="http://analyticalsen.se/archives">Archives</a></li>
+                <li><a href="www.analyticalsen.se/tags">Tags</a></li>
+                <li><a href="www.analyticalsen.se/archives">Archives</a></li>
             </ul>
         </nav>
         <div class="header_box">
-            <h1><a href="http://analyticalsen.se">Analytical Sense</a></h1>
+            <h1><a href="www.analyticalsen.se">Analytical Sense</a></h1>
         </div>
     </header>
     <div id="wrapper">
@@ -11862,12 +11888,11 @@ jQuery(document).ready(function($) {
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/Dealing_Wi.html" rel="bookmark" title="Permanent Link to &quot;Dealing With Outliers: The Concepts&quot;">Dealing With Outliers: The Concepts</a>
+                    <a href="www.analyticalsen.se/Dealing_Wi.html" rel="bookmark" title="Permanent Link to &quot;Dealing With Outliers: The Concepts&quot;">Dealing With Outliers: The Concepts</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11875,8 +11900,7 @@ jQuery(document).ready(function($) {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11885,8 +11909,7 @@ jQuery(document).ready(function($) {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11894,8 +11917,7 @@ jQuery(document).ready(function($) {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11905,8 +11927,7 @@ jQuery(document).ready(function($) {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11914,22 +11935,21 @@ jQuery(document).ready(function($) {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>One of the better loss functions to choose is the Huber Loss function. It is <a href="http://en.wikipedia.org/wiki/Huber_loss">defined</a> as:</p>
-$$L_\delta (a) = \begin{cases}
- \frac{1}{2}{a^2}                   & \text{for } |a| \le \delta, \\
- \delta (|a| - \frac{1}{2}\delta), & \text{otherwise.}
-\end{cases}$$<p>This has the effect of combining Squared Errors and Absolute Errors. For $|a| \le \delta$, the error function represents the RMSE. For $|a| \ge \delta$, the error function represents Mean Absolute Errors.</p>
+<p>$$L_\delta (a) = \begin{cases}
+ \frac{1}{2}{a^2}                   &amp; \text{for } |a| \le \delta, \\
+ \delta (|a| - \frac{1}{2}\delta), &amp; \text{otherwise.}
+\end{cases}$$</p>
+<p>This has the effect of combining Squared Errors and Absolute Errors. For $|a| \le \delta$, the error function represents the RMSE. For $|a| \ge \delta$, the error function represents Mean Absolute Errors.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11937,8 +11957,7 @@ $$L_\delta (a) = \begin{cases}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11949,8 +11968,7 @@ $$L_\delta (a) = \begin{cases}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11960,8 +11978,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11969,8 +11986,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11986,8 +12002,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11995,8 +12010,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12005,8 +12019,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12014,8 +12027,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12030,8 +12042,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12039,8 +12050,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12049,8 +12059,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12058,8 +12067,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12070,25 +12078,27 @@ Source: Wikipedia</p>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/Dealing_Wi.html">posted at 00:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://analyticalsen.se/category/none.html" rel="tag">None</a>
+                    <a href="www.analyticalsen.se/Dealing_Wi.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="www.analyticalsen.se/category/none.html" rel="tag">None</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/etl.html" class="tags">ETL</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/etl.html" class="tags">ETL</a>
                 </div>
             </article>            <h4 class="date">Dec 16, 2015</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/Starting_a.html" rel="bookmark" title="Permanent Link to &quot;Starting a Successful Restaurant&quot;">Starting a Successful Restaurant</a>
+                    <a href="www.analyticalsen.se/Starting_a.html" rel="bookmark" title="Permanent Link to &quot;Starting a Successful Restaurant&quot;">Starting a Successful Restaurant</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12104,8 +12114,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12113,8 +12122,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12123,8 +12131,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12132,8 +12139,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12142,8 +12148,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12151,8 +12156,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12160,8 +12164,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12170,8 +12173,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12179,8 +12181,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12190,8 +12191,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12199,8 +12199,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12209,8 +12208,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12218,8 +12216,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12229,8 +12226,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12241,8 +12237,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12250,8 +12245,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12269,8 +12263,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12278,8 +12271,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12289,8 +12281,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12298,8 +12289,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12311,8 +12301,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12320,8 +12309,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12334,26 +12322,28 @@ Source: Wikipedia</p>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/Starting_a.html">posted at 00:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://analyticalsen.se/category/none.html" rel="tag">None</a>
+                    <a href="www.analyticalsen.se/Starting_a.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="www.analyticalsen.se/category/none.html" rel="tag">None</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/ds.html" class="tags">DS</a>
-                    &nbsp;<a href="http://analyticalsen.se/tags/ml.html" class="tags">ML</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/ds.html" class="tags">DS</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/ml.html" class="tags">ML</a>
                 </div>
             </article>            <h4 class="date">Nov 25, 2015</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/Predicting.html" rel="bookmark" title="Permanent Link to &quot;Predicting Lending Club Defaults for Fun and Profit&quot;">Predicting Lending Club Defaults for Fun and Profit</a>
+                    <a href="www.analyticalsen.se/Predicting.html" rel="bookmark" title="Permanent Link to &quot;Predicting Lending Club Defaults for Fun and Profit&quot;">Predicting Lending Club Defaults for Fun and Profit</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12370,8 +12360,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12380,8 +12369,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12389,21 +12377,19 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>FICO scores do an excellent job predicting the default rate of P2P borrowers:</p>
 <p><img src="https://dl.dropboxusercontent.com/u/97258109/Screens/S3594.png" alt="" style="height: 400px;vertical-align: left"/></p>
-<p>People with incomes $<70k$ are more likely to default than richer borrowers:</p>
+<p>People with incomes $&lt;70k$ are more likely to default than richer borrowers:</p>
 <p><img src="https://dl.dropboxusercontent.com/u/97258109/Screens/S3595.png" alt="" style="height: 400px;align: left"/></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12413,8 +12399,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12422,8 +12407,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12432,8 +12416,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12441,8 +12424,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12453,8 +12435,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12462,8 +12443,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12472,8 +12452,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12481,8 +12460,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12493,8 +12471,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12502,8 +12479,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12527,25 +12503,27 @@ Source: Wikipedia</p>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/Predicting.html">posted at 00:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://analyticalsen.se/category/none.html" rel="tag">None</a>
+                    <a href="www.analyticalsen.se/Predicting.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="www.analyticalsen.se/category/none.html" rel="tag">None</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/ds.html" class="tags">DS</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/ds.html" class="tags">DS</a>
                 </div>
             </article>            <h4 class="date">Nov 16, 2015</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/Everything.html" rel="bookmark" title="Permanent Link to &quot;Everything You Need to Know to Use Random Forests&quot;">Everything You Need to Know to Use Random Forests</a>
+                    <a href="www.analyticalsen.se/Everything.html" rel="bookmark" title="Permanent Link to &quot;Everything You Need to Know to Use Random Forests&quot;">Everything You Need to Know to Use Random Forests</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12555,8 +12533,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12564,8 +12541,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12579,8 +12555,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12590,8 +12565,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12599,8 +12573,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12608,8 +12581,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12618,8 +12590,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12627,8 +12598,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12637,8 +12607,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12646,8 +12615,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12656,8 +12624,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12670,8 +12637,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12679,8 +12645,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12688,8 +12653,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12703,8 +12667,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12712,8 +12675,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12722,8 +12684,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12731,8 +12692,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12741,8 +12701,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12750,8 +12709,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12776,8 +12734,7 @@ Source: Wikipedia</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12786,8 +12743,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12795,8 +12751,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12805,8 +12760,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12814,8 +12768,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12835,8 +12788,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12844,8 +12796,7 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12855,14 +12806,13 @@ Source: Wikipedia</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="References">References<a class="anchor-link" href="#References">&#182;</a></h1><ol>
 <li>Friedman, Jerome, Trevor Hastie, and Robert Tibshirani. The elements of statistical learning. Vol. 1. Springer, Berlin: Springer series in statistics, 2001.
-APA    </li>
+APA </li>
 <li><a href="http://www.slideshare.net/0xdata/jan-vitek-distributedrandomforest522013">http://www.slideshare.net/0xdata/jan-vitek-distributedrandomforest522013</a></li>
 <li><a href="http://scikit-learn.org/stable/modules/ensemble.html">http://scikit-learn.org/stable/modules/ensemble.html</a></li>
 <li><a href="http://download.springer.com/static/pdf/639/art%253A10.1023%252FA%253A1010933404324.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Farticle%2F10.1023%2FA%3A1010933404324&amp;token2=exp=1447688130~acl=%2Fstatic%2Fpdf%2F639%2Fart%25253A10.1023%25252FA%25253A1010933404324.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Farticle%252F10.1023%252FA%253A1010933404324*~hmac=3b7a5a59b9ee6c2c4c500ef943cd2e0725e74621ba10977e4b51c8989b1819c7">Random Forests by Leo Breiman</a></li>
@@ -12870,24 +12820,27 @@ APA    </li>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/Everything.html">posted at 00:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://analyticalsen.se/category/none.html" rel="tag">None</a>
+                    <a href="www.analyticalsen.se/Everything.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="www.analyticalsen.se/category/none.html" rel="tag">None</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/ml.html" class="tags">ML</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/ml.html" class="tags">ML</a>
                 </div>
-            </article>
+            </article>            <h4 class="date">Nov 16, 2015</h4>
+
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/Jupyter_on.html" rel="bookmark" title="Permanent Link to &quot;Jupyter on the Cloud -- A How-To&quot;">Jupyter on the Cloud -- A How-To</a>
+                    <a href="www.analyticalsen.se/Jupyter_on.html" rel="bookmark" title="Permanent Link to &quot;Jupyter on the Cloud -- A How-To&quot;">Jupyter on the Cloud -- A How-To</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12903,8 +12856,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12912,8 +12864,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12934,8 +12885,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12943,8 +12893,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12958,12 +12907,12 @@ APA    </li>
 </li>
 <li><p>Open the configuration file (<code>~/.jupyter/jupyter_notebook_config.py</code> by default) you made with your favorite text editor and copy in the hash generated from passwd():</p>
 <div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="s1">u&#39;sha1:67c9e60bb8b6:9ffede0825894254b2e042ea597d771089e11aed&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;sha1:67c9e60bb8b6:9ffede0825894254b2e042ea597d771089e11aed&#39;</span>
 <span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
 <span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">open_browser</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">9999</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">certfile</span> <span class="o">=</span> <span class="s1">u&#39;/home/ubuntu/mycert.pem&#39;</span>
-<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">keyfile</span> <span class="o">=</span> <span class="s1">u&#39;/home/ubuntu/mycert.key&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">certfile</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;/home/ubuntu/mycert.pem&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">keyfile</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;/home/ubuntu/mycert.key&#39;</span>
 </pre></div>
 </li>
 <li><p>In <code>.bashrc</code> make the following alias:</p>
@@ -12977,8 +12926,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12986,8 +12934,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13004,8 +12951,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13013,8 +12959,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13024,26 +12969,28 @@ APA    </li>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/Jupyter_on.html">posted at 00:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://analyticalsen.se/category/none.html" rel="tag">None</a>
+                    <a href="www.analyticalsen.se/Jupyter_on.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="www.analyticalsen.se/category/none.html" rel="tag">None</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/aws.html" class="tags">AWS</a>
-                    &nbsp;<a href="http://analyticalsen.se/tags/nix.html" class="tags">*Nix</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/aws.html" class="tags">AWS</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/nix.html" class="tags">*Nix</a>
                 </div>
             </article>            <h4 class="date">Oct 22, 2015</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/films_2015.html" rel="bookmark" title="Permanent Link to &quot;In Search of the Most Promising Movie Remakes or Sequels&quot;">In Search of the Most Promising Movie Remakes or Sequels</a>
+                    <a href="www.analyticalsen.se/films_2015.html" rel="bookmark" title="Permanent Link to &quot;In Search of the Most Promising Movie Remakes or Sequels&quot;">In Search of the Most Promising Movie Remakes or Sequels</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13052,8 +12999,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13061,8 +13007,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13077,7 +13022,7 @@ APA    </li>
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">costs</span> <span class="o">=</span> <span class="mi">50</span><span class="n">e6</span><span class="p">;</span> <span class="n">subsciber_cost</span> <span class="o">=</span> <span class="mi">120</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">costs</span> <span class="o">=</span> <span class="mf">50e6</span><span class="p">;</span> <span class="n">subsciber_cost</span> <span class="o">=</span> <span class="mi">120</span>
 <span class="n">sub_rev</span> <span class="o">=</span> <span class="n">subsciber_cost</span> <span class="o">*</span> <span class="mf">33.3e6</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;$</span><span class="si">{:,}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sub_rev</span> <span class="o">*</span> <span class="mf">0.015</span><span class="p">)))</span>
 </pre></div>
@@ -13090,7 +13035,11 @@ APA    </li>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>$59,940,000
 </pre>
@@ -13101,8 +13050,7 @@ APA    </li>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13111,8 +13059,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13120,8 +13067,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13130,8 +13076,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13159,8 +13104,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13168,8 +13112,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13179,8 +13122,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13188,18 +13130,16 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="" alt=""></p>
+<p><img src="data:image/png;base64,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" alt=""></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13209,8 +13149,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13218,8 +13157,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13228,8 +13166,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13238,8 +13175,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13247,8 +13183,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13315,8 +13250,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13324,8 +13258,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13353,8 +13286,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13362,8 +13294,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13372,8 +13303,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13393,8 +13323,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13402,8 +13331,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13411,24 +13339,26 @@ APA    </li>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/films_2015.html">posted at 00:00</a>
+                    <a href="www.analyticalsen.se/films_2015.html">posted at 00:00</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/ds.html" class="tags">DS</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/ds.html" class="tags">DS</a>
                 </div>
             </article>            <h4 class="date">Oct 21, 2015</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/Quickly_Make_CLI_Tools_with_Python.html" rel="bookmark" title="Permanent Link to &quot;Quickly Make CLI Tools with Python&quot;">Quickly Make CLI Tools with Python</a>
+                    <a href="www.analyticalsen.se/Quickly_Make_CLI_Tools_with_Python.html" rel="bookmark" title="Permanent Link to &quot;Quickly Make CLI Tools with Python&quot;">Quickly Make CLI Tools with Python</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13436,8 +13366,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13447,8 +13376,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13456,8 +13384,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13508,8 +13435,7 @@ APA    </li>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13517,8 +13443,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13532,8 +13457,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13541,8 +13465,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13569,8 +13492,7 @@ APA    </li>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13579,8 +13501,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13588,8 +13509,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13598,38 +13518,27 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+ 
 
-</div>
-</div>
-</div>
-
-</div></p>
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/Quickly_Make_CLI_Tools_with_Python.html">posted at 00:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://analyticalsen.se/category/none.html" rel="tag">None</a>
+                    <a href="www.analyticalsen.se/Quickly_Make_CLI_Tools_with_Python.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="www.analyticalsen.se/category/none.html" rel="tag">None</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/python.html" class="tags">Python</a>
-                    &nbsp;<a href="http://analyticalsen.se/tags/cli.html" class="tags">CLI</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/python.html" class="tags">Python</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/cli.html" class="tags">CLI</a>
                 </div>
             </article>            <h4 class="date">Jul 25, 2015</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/sqlite3.html" rel="bookmark" title="Permanent Link to &quot;sqlite3&quot;">sqlite3</a>
+                    <a href="www.analyticalsen.se/sqlite3.html" rel="bookmark" title="Permanent Link to &quot;sqlite3&quot;">sqlite3</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13637,8 +13546,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13647,8 +13555,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13656,8 +13563,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13675,8 +13581,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13684,8 +13589,7 @@ APA    </li>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13708,8 +13612,7 @@ sqlite&gt; pragma temp_store_directory = '/spacious/hdd/data';</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13717,8 +13620,7 @@ sqlite&gt; pragma temp_store_directory = '/spacious/hdd/data';</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13734,26 +13636,28 @@ sqlite&gt; pragma temp_store_directory = '/spacious/hdd/data';</code></pre>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/sqlite3.html">posted at 00:00</a>
-                    &nbsp;&middot;&nbsp;<a href="http://analyticalsen.se/category/none.html" rel="tag">None</a>
+                    <a href="www.analyticalsen.se/sqlite3.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="www.analyticalsen.se/category/none.html" rel="tag">None</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/nix.html" class="tags">('*Nix'</a>
-                    &nbsp;<a href="http://analyticalsen.se/tags/cli.html" class="tags">'CLI')</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/nix.html" class="tags">('*Nix'</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/cli.html" class="tags">'CLI')</a>
                 </div>
             </article>            <h4 class="date">Jun 20, 2015</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/WCCLI.html" rel="bookmark" title="Permanent Link to &quot;WC CLI Quick Reference Part 1&quot;">WC CLI Quick Reference Part 1</a>
+                    <a href="www.analyticalsen.se/WCCLI.html" rel="bookmark" title="Permanent Link to &quot;WC CLI Quick Reference Part 1&quot;">WC CLI Quick Reference Part 1</a>
                 </h2>
 
                 <p>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13761,8 +13665,7 @@ sqlite&gt; pragma temp_store_directory = '/spacious/hdd/data';</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13776,8 +13679,7 @@ sqlite&gt; pragma temp_store_directory = '/spacious/hdd/data';</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13785,8 +13687,7 @@ sqlite&gt; pragma temp_store_directory = '/spacious/hdd/data';</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13798,20 +13699,23 @@ sqlite&gt; pragma temp_store_directory = '/spacious/hdd/data';</code></pre>
 
 </div>
 </div>
-</div></p>
+</div>
+ 
+
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/WCCLI.html">posted at 00:00</a>
+                    <a href="www.analyticalsen.se/WCCLI.html">posted at 00:00</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="http://analyticalsen.se/tags/nix.html" class="tags">*Nix</a>
-                    &nbsp;<a href="http://analyticalsen.se/tags/cli.html" class="tags">CLI</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/nix.html" class="tags">*Nix</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/cli.html" class="tags">CLI</a>
                 </div>
             </article>            <h4 class="date">Dec 01, 2012</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/license.html" rel="bookmark" title="Permanent Link to &quot;license&quot;">license</a>
+                    <a href="www.analyticalsen.se/license.html" rel="bookmark" title="Permanent Link to &quot;license&quot;">license</a>
                 </h2>
 
                 <p>The MIT License (MIT)</p>
@@ -13834,7 +13738,7 @@ SOFTWARE.</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/license.html">posted at 10:02</a>
+                    <a href="www.analyticalsen.se/license.html">posted at 10:02</a>
                 </div>
             </article>
 
@@ -13845,7 +13749,7 @@ SOFTWARE.</p>
                 &middot;
                 Powered by <a href="http://getpelican.com">Pelican</a>
                 &middot;
-                <a href="http://analyticalsen.se/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+                <a href="www.analyticalsen.se/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
             </footer>
         </div>
         <div class="clear"></div>

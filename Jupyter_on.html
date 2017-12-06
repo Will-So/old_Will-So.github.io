@@ -9,8 +9,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1105,7 +1105,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2534,7 +2533,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,7 +3023,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8756,6 +8753,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8958,8 +8958,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8982,6 +8988,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9118,6 +9134,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9207,6 +9226,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9251,6 +9273,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9547,6 +9572,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9567,11 +9593,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11242,7 +11263,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11554,6 +11575,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11567,6 +11589,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11629,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11641,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 
@@ -11740,7 +11769,7 @@ div.collapseheader {
 }
 </style>
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 <script type="text/javascript">
 init_mathjax = function() {
     if (window.MathJax) {
@@ -11779,14 +11808,14 @@ jQuery(document).ready(function($) {
 
 
     <meta charset="utf-8" />
-    <title>Analytical Sense | license</title>
-    <link rel="shortcut icon" type="image/png" href="http://analyticalsen.se/favicon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="http://analyticalsen.se/favicon.ico">
-    <link href="http://analyticalsen.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Full Atom Feed" />
-    <link href="http://analyticalsen.se/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Categories Atom Feed" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/screen.css" type="text/css" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="http://analyticalsen.se/theme/css/print.css" type="text/css" media="print" />
+    <title>Analytical Sense | Jupyter on the Cloud -- A How-To</title>
+    <link rel="shortcut icon" type="image/png" href="www.analyticalsen.se/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="www.analyticalsen.se/favicon.ico">
+    <link href="www.analyticalsen.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Full Atom Feed" />
+    <link href="www.analyticalsen.se/feeds/none.atom.xml" type="application/atom+xml" rel="alternate" title="Analytical Sense Categories Atom Feed" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="www.analyticalsen.se/theme/css/print.css" type="text/css" media="print" />
     <meta name="generator" content="Pelican" />
 
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
@@ -11839,53 +11868,172 @@ jQuery(document).ready(function($) {
 </script>
 
 
+    <meta name="keywords" content="AWS,*Nix" />
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="http://analyticalsen.se">Home</a></li>
-                <li><a href="http://analyticalsen.se/pages/about.html">About</a></li>
-                <li><a href="http://analyticalsen.se/pages/projects.html">Projects</a></li>
-                <li><a href="http://analyticalsen.se/pages/glossary.html">Glossary</a></li>
+                <li><a href="www.analyticalsen.se">Home</a></li>
                 <li><a href="https://github.com/Will-So/">GitHub</a></li>
-                <li><a href="http://analyticalsen.se/tags">Tags</a></li>
-                <li><a href="http://analyticalsen.se/archives">Archives</a></li>
+                <li><a href="www.analyticalsen.se/tags">Tags</a></li>
+                <li><a href="www.analyticalsen.se/archives">Archives</a></li>
             </ul>
         </nav>
         <div class="header_box">
-            <h1><a href="http://analyticalsen.se">Analytical Sense</a></h1>
+            <h1><a href="www.analyticalsen.se">Analytical Sense</a></h1>
         </div>
     </header>
     <div id="wrapper">
-        <div id="content">            <h4 class="date">Dec 01, 2012</h4>
+        <div id="content">            <h4 class="date">Nov 16, 2015</h4>
 
             <article class="post">
                 <h2 class="title">
-                    <a href="http://analyticalsen.se/blog/license.html" rel="bookmark" title="Permanent Link to &quot;license&quot;">license</a>
+                    <a href="www.analyticalsen.se/Jupyter_on.html" rel="bookmark" title="Permanent Link to &quot;Jupyter on the Cloud -- A How-To&quot;">Jupyter on the Cloud -- A How-To</a>
                 </h2>
 
-                <p>The MIT License (MIT)</p>
-<p>Copyright (c) 2014 Daan Debie</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>
+                <p>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the Jupyter Notebook with an EC2 instance allows us to analyze data of a size that would be difficult or impossible to do on our local machines. The most powerful (from a memory perspective) EC2 instance has 244GB of Ram and 32 cores and often costs only 50 cents/hr.</p>
+<p>This tutorial explains:</p>
+<ol>
+<li>How to Set up the Jupyter Notebook on an EC2 instance so we can use it from a web browser.</li>
+<li>How to keep the notebook running even if the SSH session closes.</li>
+<li>A workflow for dealing with spot instances. </li>
+</ol>
+<p>This post assumes you are already familiar with the basics of EC2. You should know how to start an instance and SSH into it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Step-1:-Setting-up-your-EC2-Instance">Step 1: Setting up your EC2 Instance<a class="anchor-link" href="#Step-1:-Setting-up-your-EC2-Instance">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Go to the EC2 Management Console and select launch instances</li>
+<li>Choose which AMI you want to use. I recommend Ubuntu. There might be some minor differences if you choose something else. [2]</li>
+<li>Select which type of instance you want and change any additional settings</li>
+<li>In the security group page, enable HTTPS and Port 9999. Port 9999 is the port we will be accessing the notebook from:
+<img src="https://dl.dropboxusercontent.com/u/97258109/Screens/S3570.png" alt=""></li>
+<li>Connect to your EC2 Instance with SSH</li>
+<li>Install all the software you need including the Notebook[3]<ul>
+<li>The link to install conda can be found <a href="https://www.continuum.io/downloads">here</a>. Just copy the link address for linux and then use <code>wget link</code> on your remote host to download it. Just follow the directions on the page. The installation will ask whether to append the conda environment to the Python path. Type in <code>yes</code></li>
+<li>After installing, you need to reload <code>.bashrc</code> (type <code>. .bashrc</code>)</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Step-2:-Configuring-the-Notebook-Server">Step 2: Configuring the Notebook Server<a class="anchor-link" href="#Step-2:-Configuring-the-Notebook-Server">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Jupyter Documentation provides an excellent walkthrough on configuring the server <a href="http://jupyter-notebook.readthedocs.org/en/latest/public_server.html">here</a>. The tl;dr is:</p>
+<ol>
+<li>In the terminal type: <code>jupyter notebook --generate-config</code> in order to generate the configuration file.</li>
+<li>In IPython type in <code>from notebook.auth import passwd; passwd()</code> and then enter in the password you want to use to access the notebook. Remember the password and copy the hash you get back. </li>
+<li><p>Generate an SSL certificate using the following code:</p>
+
+<pre><code> openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.key -out mycert.pem</code></pre>
+</li>
+<li><p>Open the configuration file (<code>~/.jupyter/jupyter_notebook_config.py</code> by default) you made with your favorite text editor and copy in the hash generated from passwd():</p>
+<div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;sha1:67c9e60bb8b6:9ffede0825894254b2e042ea597d771089e11aed&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">open_browser</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">9999</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">certfile</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;/home/ubuntu/mycert.pem&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">keyfile</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;/home/ubuntu/mycert.key&#39;</span>
+</pre></div>
+</li>
+<li><p>In <code>.bashrc</code> make the following alias:</p>
+<p><code>alias jupyter='nohup jupyter notebook &amp;'</code></p>
+</li>
+</ol>
+<p>Then reload <code>.bashrc</code> again. This also makes your jupyter session persistent. It will not stop running just because the ssh session is closed.</p>
+<p>Now you can type <code>jupyter</code> in the terminal and the server should run. Then browse to <a href="https://ip_address:9999">https://ip_address:9999</a> and login with the password you entered:</p>
+<p><img src="https://dl.dropboxusercontent.com/u/97258109/Screens/S3574.png" width="800"/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Protecting-your-data-while-using-Spot-Instances">Protecting your data while using Spot Instances<a class="anchor-link" href="#Protecting-your-data-while-using-Spot-Instances">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Spot instances are much cheaper than on-demand instances. They downside is that you can be kicked off your instance if the amount of capacity of the Spot Instance gets too high.</p>
+<p>The best way to deal with the transient nature of spot instances is to use the following workflow:</p>
+<ol>
+<li>Write the code on your local-host</li>
+<li>Prototype the code on your local-host with a small sample of the data you want to process.</li>
+<li>Move your code to your EC2 instance and then run the code. I usually use github for this. </li>
+</ol>
+<p>This way we minimize the amount of time that we have to run the EC2 instance and we don't have to worry about losing any code because it is all in the local host.</p>
+<p>If you end up writing novel code in your EC2 instance I recommend keeping your code synced with github.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Footnotes">Footnotes<a class="anchor-link" href="#Footnotes">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>[1] Some commands might be different above if you choose a different AMI.</p>
+<p>[2] In the future, I recommend creating your own AMI so you don't have to do this every time.</p>
+<p>[3] For installing the apps, I recommend you use <a href="https://www.continuum.io/downloads">Anaconda</a> to install Python and dependencies. Note that you will have to restart your shell session in order to use</p>
+
+</div>
+</div>
+</div>
+ 
+
+</p>
                 <div class="clear"></div>
 
                 <div class="info">
-                    <a href="http://analyticalsen.se/blog/license.html">posted at 10:02</a>
+                    <a href="www.analyticalsen.se/Jupyter_on.html">posted at 00:00</a>
+                    &nbsp;&middot;&nbsp;<a href="www.analyticalsen.se/category/none.html" rel="tag">None</a>
+                    &nbsp;&middot;
+                    &nbsp;<a href="www.analyticalsen.se/tags/aws.html" class="tags">AWS</a>
+                    &nbsp;<a href="www.analyticalsen.se/tags/nix.html" class="tags">*Nix</a>
                 </div>
             </article>
             <div class="clear"></div>
@@ -11895,7 +12043,7 @@ SOFTWARE.</p>
                 &middot;
                 Powered by <a href="http://getpelican.com">Pelican</a>
                 &middot;
-                <a href="http://analyticalsen.se/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+                <a href="www.analyticalsen.se/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
             </footer>
         </div>
         <div class="clear"></div>
